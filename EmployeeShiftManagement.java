@@ -1,7 +1,8 @@
+package GasStation;
 import java.util.Scanner;
 
 public class EmployeeShiftManagement {
-    public String EmployeeShiftManagement() {
+    public String EmployeeShiftManagements() {
         int res = promptUserIdNumber();
         int total = promptUserShiftHours();
         return "The total earnings for User " + res + " is $" + total;

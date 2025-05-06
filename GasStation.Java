@@ -1,10 +1,9 @@
+package GasStation;
 
- 
 import java.util.Scanner;
 import java.util.Date;
 class GasStation {
     
-    Scanner input = new Scanner(System.in);
     final static double defaultGallonsRegular = 300;
     final static double defaultGallonsPremium = 300;
     final static double defaultGallonsDiesel = 300;
@@ -23,12 +22,12 @@ class GasStation {
         String result = "";
         if (inp == 2) {
             EmployeeShiftManagement emp = new EmployeeShiftManagement();
-            result = emp.EmployeeShiftManagement();
+            result = emp.EmployeeShiftManagements();
             System.out.println("\n" + result);
         }
         else if (inp == 1) {
             FuelPumping cus = new FuelPumping();
-            result = cus.fuelPump();
+            result = cus.fuelPump(currentGallonsRegular, currentGallonsPremium, currentGallonsDiesel);
             System.out.println("\n" + result);
             String fuelType = cus.getType();
             double gallons = cus.getGallons();
