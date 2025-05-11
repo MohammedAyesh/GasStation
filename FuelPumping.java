@@ -14,12 +14,10 @@ public class FuelPumping {
         
         usedGallons += gallons;
         Date date = new Date();
-        return  "Fuel Receipt\n\n" +
-                     "Fuel Type: " + fuelType + "\n" +
-                     "Price Per Gallon: $" + price + "\n" +
-                     "Gallons of Fuel: " + gallons + "\n" +
-                     "Total Price: $" + (price*gallons) + "\n" +
-                     "Date: " + date;
+        String header = String.format("|\tFuel Type\t|\tPrice/Gallon\t|\tGallons\t\t|\tTotal Price\t|\tDate\t\t|");
+        String data = String.format("|\t%-7s\t\t|\t%8.2f\t|\t%8.2f\t|\t%8.2f\t|\t%-8tD\t|",
+                                    fuelType, price, gallons, (price * gallons), date);
+        return header + "\n" + data + "\n";
     }
     public double getGallons() {return usedGallons;}
     public String getType() {return fuelType;}
